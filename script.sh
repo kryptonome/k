@@ -9,7 +9,7 @@ fi
 HBAR="---------------------------------------------------------------------------------------"
 
 # import messages
-source <(curl -sL https://github.com/kryptonome/k/blob/master/messages.sh) 
+source <(curl -sL https://raw.githubusercontent.com/syscoin/Masternode-Install-Script/master/messages.sh) 
 
 pause(){
   echo ""
@@ -48,7 +48,8 @@ maybe_prompt_for_swap_file(){
   MEMORY_SWAP=$(free -m | awk '/^Swap:/{print $2}')
   MEMORY_TOTAL=$(($MEMORY_RAM + $MEMORY_SWAP))
   if [ $MEMORY_RAM -lt 3800 ]; then
-      CREATE_SWAP="Y";
+      echo "You need to upgrade your server to 4 GB RAM."
+       exit 1
   fi
   if [ $MEMORY_TOTAL -lt 7700 ]; then
       CREATE_SWAP="Y";
