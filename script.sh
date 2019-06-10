@@ -9,7 +9,7 @@ fi
 HBAR="---------------------------------------------------------------------------------------"
 
 # import messages
-source <(curl -sL https://www.dropbox.com/s/5u8iw5u9mzv52o5/messages.sh) 
+source <(curl -sL https://github.com/kryptonome/k/blob/master/messages.sh) 
 
 pause(){
   echo ""
